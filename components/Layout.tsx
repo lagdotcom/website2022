@@ -5,9 +5,16 @@ import { ReactNode } from "react";
 
 import utilStyles from "../styles/utils.module.css";
 import styles from "./layout.module.css";
+import ListOfLinks from "./ListOfLinks";
 
-const name = "lagdotcom";
+const name = "Lag.Com";
 export const siteTitle = "lag.codes";
+
+const links = {
+  about: "/about",
+  "itch.io": "https://lagdotcom.itch.io",
+  twitter: "https://twitter.com/lagdotcom",
+};
 
 export default function Layout({
   children,
@@ -20,7 +27,7 @@ export default function Layout({
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="lagdotcom's website" />
+        <meta name="description" content="Lag.Com's website" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -29,6 +36,7 @@ export default function Layout({
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@lagdotcom" />
       </Head>
       <header className={styles.header}>
         {home ? (
@@ -64,6 +72,9 @@ export default function Layout({
             </h2>
           </>
         )}
+        <div>
+          <ListOfLinks links={links} />
+        </div>
       </header>
       <main>{children}</main>
       {!home && (

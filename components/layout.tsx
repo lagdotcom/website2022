@@ -1,21 +1,26 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { ReactNode } from "react";
 
-const name = '[Your Name]'
-export const siteTitle = 'Next.js Sample Website'
+import utilStyles from "../styles/utils.module.css";
+import styles from "./layout.module.css";
 
-export default function Layout({ children, home }) {
+const name = "lagdotcom";
+export const siteTitle = "lag.codes";
+
+export default function Layout({
+  children,
+  home,
+}: {
+  children: ReactNode;
+  home?: boolean;
+}) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="lagdotcom's website" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -69,5 +74,5 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
-  )
+  );
 }

@@ -8,8 +8,6 @@ export default function ExternalLink({
   href: string;
 }) {
   return (
-    <Link href={href}>
-      <a target="_blank">{label}</a>
-    </Link>
+    <Link href={href} target="_blank">{label}</Link>
   );
 }

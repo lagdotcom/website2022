@@ -13,7 +13,7 @@ export const siteTitle = "lag.codes";
 const links = {
   about: "/about",
   "itch.io": "https://lagdotcom.itch.io",
-  twitter: "https://twitter.com/lagdotcom",
+  bsky: "https://bsky.app/profile/lagdotcom.bsky.social",
 };
 
 export default function Layout({
